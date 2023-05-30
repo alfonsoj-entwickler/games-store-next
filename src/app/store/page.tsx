@@ -2,8 +2,8 @@ import ListGame from "@/components/listGame"
 
 
 export const metadata = {
-  title: "Games List",
-  description: "Games Store",
+  title: "Store VideoGame",
+  description: "Store of Video Games",
 };
 
 async function getData() {

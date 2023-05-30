@@ -11,8 +11,8 @@ const inter = Outfit({
 });
 
 export const metadata = {
-  title: "Games Store",
-  description: "Games Store with next js",
+  title: "Muon VideoGames",
+  description: "Blog and Store about video games",
 };
 
 export default function RootLayout({
