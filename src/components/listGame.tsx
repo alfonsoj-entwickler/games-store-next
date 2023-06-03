@@ -6,7 +6,7 @@ type Props = {
   items: [Games];
 };
 
-const imageStyle = {
+const imageStyle: React.CSSProperties = {
   objectFit: 'contain',
   objectPosition: 'left',
 };
