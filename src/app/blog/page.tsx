@@ -1,3 +1,5 @@
+import ListPost from "@/components/listPost"
+
 
 export const metadata = {
   title: "Blog Game",
@@ -18,12 +20,15 @@ async function getData() {
   return res.json();
 }
 
-export default async function Blog() {
-  const  {data} = await getData();
-
+export default async function Store({}) {
+  const  {data: listPost, meta} = await getData();
   return ( 
     <>
-      <h1 className="text-6xl font-bold text-center text-sky-700">Blog</h1> 
+      <h1 className="text-6xl font-bold text-center text-sky-700">Blog</h1>
+      <h2 className="mb-6 text-4xl font-bold text-left text-sky-700" >Article</h2>
+      <ListPost
+          items={listPost}
+       />
     </>
   )
 }
