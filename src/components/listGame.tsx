@@ -20,12 +20,14 @@ export default function ListGame({ items }: Props) {
           items.map((game) => (
             <div key={`game-${game.id}`} className="flex flex-col">
               <div className="h-96 relative">
-                <Image 
-                  src={game.attributes.cover_image.data.attributes.url}
-                  alt={game.attributes.cover_image.data.attributes.name}
-                  fill
-                  style={imageStyle}
-                />
+                {game.attributes.cover_image && (
+                  <Image 
+                    src={game.attributes.cover_image.data.attributes.url}
+                    alt={game.attributes.cover_image.data.attributes.name}
+                    fill
+                    style={imageStyle}
+                  />
+                )}
               </div>
               <div className="h-70 flex flex-col items-start">
                 <h3 className="text-4xl my-6">{game.attributes.title}</h3>
