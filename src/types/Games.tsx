@@ -19,7 +19,8 @@ type Games = {
     description: string;
     url: string;
     price: number;
-    cover_image: Cover;
+    cover_image: Cover | null;
+    quantity: number | undefined;
   };
 };
 
