@@ -33,6 +33,9 @@ export default function ListGame({ items }: Props) {
                 <h3 className="text-4xl my-6">{game.attributes.title}</h3>
                 <p className="mb-6">{`${game.attributes.description.slice(0, 100)} ...`}</p>
                 <p className="text-base mb-6">{game.attributes.price}€</p>
+                {game.attributes.quantity && (
+                   <p className="text-base mb-6">Quantity in basket: <span className="text-2xl font-bold ml-2">{game.attributes.quantity}</span></p>
+                )}
                 <Link className="px-6 py-4 transition-all bg-green-500 hover:bg-green-700" href={`/store/${game.attributes.url}`}>
                   Show game
                 </Link>
