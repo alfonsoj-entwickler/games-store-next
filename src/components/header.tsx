@@ -2,9 +2,12 @@
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import useBasket from "@/hooks/useBasket"; 
 
 export default function Header() {
   const pathname = usePathname();
+  const data = useBasket();
+  const { basketGamesData }:any = data;
 
   return (
     <header className="py-20 px-10 bg-center bg-cover bg-[url('/images/header_img.jpg')]">
@@ -33,7 +36,7 @@ export default function Header() {
           </Link>
           <Link
             href="/basket"
-            className={`p-2 font-semibold transition-all hover:bg-sky-700 ${pathname === "/basket" && "bg-sky-700"}`}
+            className={`p-2 font-semibold transition-all hover:bg-sky-700 ${pathname === "/basket" && "bg-sky-700"} ${basketGamesData?.length > 0 && "text-red-800"}`}
           >
             <span className="w-[2rem] h-[2rem]">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" className="w-[2rem] h-[2rem]">
