@@ -2,6 +2,7 @@ import "./globals.css";
 import { Outfit } from "next/font/google";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import BasketProvider from "@/context/BasketProvider";
 
 const inter = Outfit({
   weight: ["400", "700", "900"],
@@ -23,11 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <main className="max-w-7xl mx-auto min-h-screen py-10">
-          {children}
-        </main>
-        <Footer />
+        <BasketProvider>
+          <Header />
+          <main className="max-w-7xl mx-auto min-h-screen py-10">
+            {children}
+          </main>
+          <Footer />
+        </BasketProvider>
       </body>
     </html>
   );
